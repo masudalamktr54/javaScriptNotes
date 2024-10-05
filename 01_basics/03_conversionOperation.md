@@ -164,3 +164,5 @@ console.log(1 + 2 + "2"); // 32
 - `"12" + 2 → "122".`
 
 - This is why the order of operations and types in JavaScript expressions is crucial to understanding the result.
+
+_link to study : https://tc39.es/ecma262/multipage/abstract-operations.html#sec-type-conversion_
