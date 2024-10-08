@@ -1,20 +1,6 @@
-// console.log(2 > 1);
-// console.log(2 >= 1);
-// console.log(2 < 1);
-// console.log(2 == 1);
-// console.log(2 != 1);
+const testString = "Java and Javascript are not the same";
 
-// console.log("2" > 1);
-// console.log("02" > 1);
-
-// console.log(null > 0); //false
-// console.log(null == 0); //false
-// console.log(null >= 0); //true
-
-// console.log(undefined == 0); //false
-// console.log(undefined > 0); //false
-// console.log(undefined < 0); //false
-
-// ===   // strict equality operator
-
-console.log("2" === 2); //false
+console.log(testString.endsWith("same")); // true
+console.log(testString.endsWith("Same")); // false -> case sensitive
+console.log(testString.endsWith("J")); // false
+console.log(testString.endsWith("J", 10)); // true -> true with index value
