@@ -151,8 +151,8 @@ const testString = new String("Java and Javascript are not the same!");
 
 const testStringTwo = new String("Java, and, Javascript, are, not, the, same!");
 
-console.log(testString.split()); // return a array
-console.log(testString.split(" ")); // separate by comma space
+console.log(testString.split()); // [ 'Java and Javascript are not the same!' ] -> return a array
+console.log(testString.split(" ")); // [ 'Java', 'and', 'Javascript', 'are', 'not', 'the', 'same!' ] -> separate by comma space
 console.log(testString.split("")); // [ 'J', 'a', 'v', 'a', ' ', 'a', 'n','d', ' ', 'J', 'a', 'v', 'a', 's','c', 'r', 'i', 'p', 't', ' ', 'a','r', 'e', ' ', 'n', 'o', 't', ' ','t', 'h', 'e', ' ', 's', 'a', 'm','e', '!' ]  -> separate by alphabet
 
 console.log(testStringTwo.split(",")); // [ 'Java', ' and', ' Javascript', ' are', ' not', ' the', ' same!' ]  -> when string is sprate with comma than work to seprate comma

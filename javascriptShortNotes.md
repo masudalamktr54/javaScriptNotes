@@ -8,13 +8,6 @@
 
 - If you declare a variable in JavaScript and do not pass the value then it will print undefined.
 
-- for example
-
-```javascript
-let accountState;
-console.log(accountState); //output will be "undefined"
-```
-
 # Data type and ECMAScript-05
 
 - `use strict` is used to treat all JS code as newer version.
@@ -31,44 +24,12 @@ console.log(accountState); //output will be "undefined"
 
 - We can get datatype of a variable using `typeof`
 
-```javascript
-let score = "masud";
-
-// console.log(typeof score); // or
-console.log(typeof score); // string
-```
-
 > > Convert **string** to **number**
 
 - We can use `Number()` to convert **string** to "number".
 
   - Type of `NaN` is "number".
   - `true` represents "1" and `false` represents "0".
-
-```javascript
-let score = "masud";
-
-let valueInNumber = Number(score);
-//console.log(typeof valueInNumber); //Number
-//console.log(valueInNumber); // NaN
-
-// "33" => 33
-// "33abc" => NaN
-// true => 1;
-// false => 0
-```
-
-> > Convert **number** to **string**
-
-- We can use `String()` to convert **number** to "string".
-
-```javascript
-let someNumber = 33;
-
-let stringNumber = String(someNumber);
-// console.log(stringNumber);  // 33
-// console.log(typeof stringNumber);  // "string"
-```
 
 > > Convert **boolean** conversion
 
@@ -77,27 +38,7 @@ let stringNumber = String(someNumber);
   - "1" represents `true` and "0" represents `false`.
   - " " represents `false` and "masud" represents `true`.
 
-```javascript
-let isLoggedIn = "masud";
-
-let booleanIsLoggedIn = Boolean(isLoggedIn);
-// console.log(booleanIsLoggedIn);
-
-// 1 => true; 0 => false
-// "" => false
-// "masud" => true
-```
-
-> > add `string` and `number`
-
-```javascript
-console.log("1" + 2); // 12
-console.log(1 + "2"); // 12
-console.log("1" + 2 + 2); // 122
-console.log(1 + 2 + "2"); // 32
-```
-
-#### The way JavaScript handles expressions with both strings and numbers depends on the order in which they appear. Specifically:
+  #### The way JavaScript handles expressions with both strings and numbers depends on the order in which they appear. Specifically:
 
 - If a string is encountered first (or as part of an operation), JavaScript will treat the following values as strings and perform string concatenation.
 
@@ -120,14 +61,6 @@ console.log(1 + 2 + "2"); // 32
 - `"12" + 2 → "122".`
 
 - This is why the order of operations and types in JavaScript expressions is crucial to understanding the result.
-
-# Comparision of datatypes - 08
-
-```javascript
-console.log(null > 0); //false
-console.log(null == 0); //false
-console.log(null >= 0); //true
-```
 
 - The reason is that am equal check "==" and comparision `"<", ">", "<=", ">="` work diffrently.
 
@@ -200,22 +133,9 @@ JavaScript uses an automatic garbage collector to manage memory. The garbage col
 
   1. as primitive values.
 
-  ```javascript
-  let primitiveString = "Hello, World!";
-  let templateLiteral = `Hello, ${name}!`;
-  console.log(primitiveString.length); // 13
-  console.log(primitiveString.toUpperCase()); // "HELLO, WORLD!"
-  console.log(typeof primitiveString); // "string"
-  ```
-
   2. as objects.
 
-  ```javascript
-  let stringObject = new String("Hello, World!");
-  console.log(typeof stringObject); // "object"
-  ```
-
-## String Methods
+  ## String Methods
 
 | Method              | Syntax                                         |
 | ------------------- | ---------------------------------------------- |
@@ -249,160 +169,6 @@ JavaScript uses an automatic garbage collector to manage memory. The garbage col
 | trimStart()         | `string.trimStart()`                           |
 | trimEnd()           | `string.trimEnd()`                             |
 | valueOf()           | `string.valueOf()`                             |
-
-## Most useful javascript methods
-
-1. **string.indexOf(substr, [start])** — returns the index position of character value passed with method. If not found, -1 is returned.
-
-```javascript
-const testString = new String("Java and Javascript are not the same!");
-
-console.log(testString.indexOf("e")); // 22
-console.log(testString.indexOf("e", 34)); // 35 -> Start from the 35th index position
-console.log(testString.indexOf("Java")); // 0 -> Match count from the first
-console.log(testString.indexOf("java")); // -1 -> Not found (case sensitive)
-console.log(testString.indexOf("Java", 8)); // 9
-```
-
-2. **string.lastIndexOf(substr, [start])** — returns the index position of character value passed with method. If not found, -1 is returned.
-
-```javascript
-const testString = new String("Java and Javascript are not the same!");
-
-console.log(testString.lastIndexOf("e")); // 35
-console.log(testString.lastIndexOf("e", 34)); // 30 -> Start from the 30th index position
-console.log(testString.lastIndexOf("Java")); // 9 -> Match count from the first
-console.log(testString.lastIndexOf("java")); // -1 -> Not found (case sensitive)
-console.log(testString.lastIndexOf("Java", 8)); // 0
-```
-
-3. **string.replace(originalstr,newstr)** — search for a specified regular expression in a given string and then replace it if the match occurs.
-
-```javascript
-const testString = new String("Java and Javascript are not the same!");
-// console.log(testString.replace(/Java/g, "JavaScript"));
-
-console.log(testString.replace("Java", "TypeScript"));
-console.log(testString.replace(/Java/, "TypeScript")); // Non global
-console.log(testString.replace(/Java/g, "TypeScript")); // global search modifier
-console.log(testString.replace(/java/, "JavaScript")); // case sensitive
-```
-
-4. **string.slice(start, [end])** — returns a substring of the string based on the “start” and “end” index arguments.
-
-```javascript
-const testString = new String("Java and Javascript are not the same!");
-
-console.log(testString.slice(2, 9)); // va and
-console.log(testString.slice(9)); // Javascript are not the same! -> starting Index
-console.log(testString.slice(-5, -1)); // same
-console.log(testString.slice(-5)); // same! -> start fetching from the end of the starting
-```
-
-5. **string. split()** — converts a string into an array. You have to pass a character such as a comma (,) or space to tell where to split the string.
-
-```javascript
-const testString = new String("Java and Javascript are not the same!");
-
-const testStringTwo = new String("Java, and, Javascript, are, not, the, same!");
-
-console.log(testString.split()); // [ 'Java and Javascript are not the same!' ] -> return a array
-console.log(testString.split(" ")); // [ 'Java', 'and', 'Javascript', 'are', 'not', 'the', 'same!' ] -> separate by comma space
-console.log(testString.split("")); // [ 'J', 'a', 'v', 'a', ' ', 'a', 'n','d', ' ', 'J', 'a', 'v', 'a', 's','c', 'r', 'i', 'p', 't', ' ', 'a','r', 'e', ' ', 'n', 'o', 't', ' ','t', 'h', 'e', ' ', 's', 'a', 'm','e', '!' ]  -> separate by alphabet
-
-console.log(testStringTwo.split(",")); // [ 'Java', ' and', ' Javascript', ' are', ' not', ' the', ' same!' ]  -> when string is sprate with comma than work to seprate comma
-```
-
-6. **string.trim()** — returns a new string with removed white space from the start and end of the string.
-
-```javascript
-const testString = new String("     Java and javascript     ");
-
-console.log(testString.trim()); // Java and javascript -> Remove whitespaces
-```
-
-7. **string.trimStart()** — returns a new string with removed white space from the start of the string.
-
-```javascript
-const testString = new String("     Java and javascript     ");
-
-console.log(testString.trimStart()); // Java and javascript    -> Remove whitespaces from start
-```
-
-8. **string.trimEnd()** — returns a new string with removed white space from the end of the string.
-
-```javascript
-const testString = new String("     Java and javascript     ");
-
-console.log(testString.trimEnd()); //     Java and javascript -> Remove whitespaces from end
-```
-
-9. **string.charAt(x)** — Returns the character at the “x” position within the string.
-
-```javascript
-const testString = new String("Java and javascript");
-
-console.log(testString.charAt(6)); // n
-```
-
-10. **string.concat(string1, string2, …)** — Combines one or more strings into the existing one and returns the combined string.
-
-_**Note:-** Original string is not modified._
-
-```javascript
-const firstName = "Masud ";
-const lastName = "Alam ";
-
-const fullName = firstName.concat(lastName);
-
-const fullNameWithAnotherText = firstName.concat(
-  lastName,
-  "`You can add text here...`"
-);
-
-console.log(fullName); // Masud Alam
-console.log(fullNameWithAnotherText); // Masud Alam `You can add text here...`
-```
-
-11. **string.includes(searchString)** — returns whether searching String may be found in the source string.
-
-```javascript
-const testString = "Java and Javascript are not the same!";
-
-console.log(testString.includes("Javascript")); // true
-console.log(testString.includes("javascript")); // false
-```
-
-12. **string.toUpperCase()** — Returns the string with all of its characters converted to uppercase.
-
-_**Note:-** This method doesn’t make any change in the original string._
-
-```javascript
-const testString = "Java and Javascript are not the same!";
-
-console.log(testString.toUpperCase()); // JAVA AND JAVASCRIPT ARE NOT THE SAME!
-```
-
-13. **string.toLowerCase()** — Returns the string with all of its characters converted to lowercase.
-
-_**Note:-** This method doesn’t make any change in the original string._
-
-```javascript
-const testString = "Java and Javascript are not the same!";
-
-console.log(testString.toLowerCase()); // java and javascript are not the same!
-```
-
-14. **string.ends With(searchString[, length])** — returns whether the source string ends with the searching string.
-
-```javascript
-const testString = "Java and Javascript are not the same";
-
-console.log(testString.endsWith("same")); // true
-console.log(testString.endsWith("Same")); // false -> case sensitive
-console.log(testString.endsWith("J")); // false
-console.log(testString.endsWith("J", 10)); // true -> true with index value
-```
 
 # Number and Maths in javascript - 12
 
@@ -469,8 +235,6 @@ console.log(Math.floor(Math.random() * (max - min + 1)) + min); // Random value 
 
 # Array in javascript - 14 - 15
 
-## Notes >>
-
 - Array is Non-Primitive Data Type.
 
 - javascript array is hold all type of data.
@@ -527,36 +291,6 @@ console.log(all_new_heros); // [ 'thor', 'Ironman', 'spiderman', 'superman', 'fl
 | 25.   | find()           | `myArr.find()`           |
 | 26.   | findIndex()      | `myArr.findIndex()`      |
 | 27.   | flat()           | `myArr.flat()`           |
-
-## Most used Array Methods
-
-1. **Array.map()**
-
-2. **Array.filter()**
-
-3. **Array.reduce()**
-
-4. **Array.forEach()**
-
-5. **Array.sort()**
-
-6. **Array.includes()**
-
-7. **Array.indexOf()**
-
-8. **Array.find()**
-
-9. **Array.some()**
-
-10. **Array.concat()**
-
-11. **Array.flat()**
-
-12. **Array.isArray()**
-
-13. **Array.from()**
-
-14. **Array.Of()**
 
 # Objects in javascript
 
@@ -633,175 +367,3 @@ console.log(id, name); // 123abc masudalamktr54
 | 18.   | getPrototypeOf()            | `Object.getPrototypeOf(obj)`                   |
 | 19.   | setPrototypeOf()            | `Object.setPrototypeOf(obj, proto)`            |
 | 20.   | is()                        | `Object.is(value1, value2)`                    |
-
-## Most used Object methods
-
-**1. Object.assign()**
-
-- The `Object.assign()` method copies the values of all enumerable properties from one or more source objects to a target object.
-
-- It is used for object merging, cloning, or creating a new object with specific properties.
-
-```javascript
-const obj1 = { 1: "a", 2: "b" };
-const obj2 = { 3: "a", 4: "b" };
-
-const obj3 = Object.assign(obj1, obj2);
-console.log(obj3); // { '1': 'a', '2': 'b', '3': 'a', '4': 'b' } // Here is obj1 === obj3
-
-const obj4 = Object.assign({}, obj1, obj2);
-console.log(obj4); // { '1': 'a', '2': 'b', '3': 'a', '4': 'b' } // Assign to new empty Object (Not equal to obj1 === obj4)
-
-const obj5 = { ...obj1, ...obj2 };
-console.log(obj5); // { '1': 'a', '2': 'b', '3': 'a', '4': 'b' } // using spread operator (Not equal to obj1 === obj5)
-```
-
-**2. Object.keys()**
-
-- This method retrieves the names of all the enumerable properties from an object. It returns an array of property names.
-
-```javascript
-const instaUser = {
-  id: "123abc",
-  name: "Masud",
-  email: "masud@google.com",
-  isLoggedIn: false,
-};
-
-console.log(Object.keys(instaUser)); // [ 'id', 'name', 'email', 'isLoggedIn' ]
-```
-
-**3. Object.values()**
-
-- This method, similar to Object.keys(), gives you the values instead of the keys. It returns an array of property values.
-
-```javascript
-const instaUser = {
-  id: "123abc",
-  name: "Masud",
-  email: "masud@google.com",
-  isLoggedIn: false,
-};
-
-console.log(Object.values(instaUser)); // [ '123abc', 'Masud', 'masud@google.com', false ]
-```
-
-**4. Object.entries()**
-
-- This method combines both keys and values to produce an array of pairs. Each pair, represented by an array, consists of a property name followed by its corresponding value.
-
-```javascript
-const obj1 = { 1: "a", 2: "b" };
-
-console.log(Object.entries(obj1)); // [ [ '1', 'a' ], [ '2', 'b' ] ]
-```
-
-**5. Object.hasOwnProperty()**
-
-- This method checks if an object has a specific property as its direct property (not inherited from its prototype).
-
-```javascript
-const instaUser = {
-  id: "123abc",
-  name: "Masud",
-  email: "masud@google.com",
-  isLoggedIn: false,
-};
-
-console.log(instaUser.hasOwnProperty("id")); // true
-```
-
-**6. Object.is()**
-
-- While it may look like the `strict equality (===)` operator, this method has some nuanced differences, especially when comparing `NaN` values.
-
-- It checks if two values are the same, including distinguishing between positive and negative zeros.
-
-```javascript
-console.log(Object.is("hello", "hello")); // true
-console.log(Object.is(NaN, NaN)); // true (whereas NaN === NaN returns false)
-```
-
-**7. Object.freze()**
-
-Think of this as a protective shield for your object.
-
-- Once an object is frozen, you can't add, delete, or modify its properties.
-
-- It's useful when you want to ensure data integrity.
-
-```javascript
-const instaUser = {
-  id: "123abc",
-  name: "Masud",
-};
-
-Object.freeze(instaUser);
-
-instaUser.name = "Saba"; // It will not work because object is frozen.
-
-console.log(instaUser.name); // Masud
-```
-
-**8. Object.seal()**
-
-- This method is a bit more lenient than Object.freeze(). While you still can't add or delete properties, you can modify the values of existing properties.
-
-- It's a midway solution when you want some flexibility without adding new properties.
-
-```javascript
-const instaUser = {
-  id: "123abc",
-  name: "Masud",
-};
-
-Object.seal(instaUser);
-
-instaUser.name = "Saba"; // work fine
-console.log(instaUser.name); // Saba
-
-instaUser.email = "masud@google.com"; // It will not work because object is sealed
-console.log(instaUser.email); // undefined
-```
-
-**9. Object.defineProperties()**
-
-- This method is your advanced tool for adding new properties or modifying existing ones.
-
-- You can set characteristics like enumerability, writability, and configurability for the property, offering fine-grained control over its behavior.
-
-```javascript
-const instaUser = {
-  id: "123abc",
-  name: "Masud",
-};
-
-Object.defineProperties(instaUser, {
-  email: {
-    value: "masud@google.com",
-    writable: true,
-    enumerable: true,
-    configurable: true,
-  },
-});
-
-console.log(instaUser.email); // masud@google.com
-```
-
-**10. Object.create()**
-
-- This method lets you create a fresh object while specifying its prototype.
-
-- It's a powerful way to implement inheritance in JavaScript, allowing you to create new objects that inherit properties and methods from existing objects.
-
-```javascript
-const car = {
-  color: "blue",
-  wheels: 4,
-};
-const myObj = Object.create(car);
-
-myObj.color = "red";
-
-console.log(myObj.color); // red
-```
